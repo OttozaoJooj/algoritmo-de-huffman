@@ -46,14 +46,24 @@ class AlgoritmoHuffman:
                         node1 = heapq.heappop(self.heap)
                         node2 = heapq.heappop(self.heap)
 
-                        new_node = self.HeapNode(node1.char + node2.char, node1.freq + node2.freq)
+                        new_node = self.HeapNode(None, node1.freq + node2.freq)
 
                         new_node.left = node1
                         new_node.right = node2
                         
                         heapq.heappush(self.heap, new_node)
                 
-
+    # def make_codes_helper(self, tree, current_code):
+    #             if(tree == None):
+    #                    return
+                
+    #             if(tree.char != None):
+    #                    self.codes
+    
+    # def make_codes(self):
+    #             tree = heapq.heappop(self.heap)
+    #             self.make_codes_helper(tree, "")
+                
 
 
 
@@ -73,7 +83,14 @@ class AlgoritmoHuffman:
                         print(frequency)
                         self.make_heap(frequency)
                         self.merge_nodes()
-                        
+                        print(self.heap[0].char)
+
+                        print(self.heap[0].right.char)
+                        print(self.heap[0].right.left.char)
+                        print(self.heap[0].right.right.left.char)
+
+                        print(self.heap[0].right.right.right.char)
+
                 #         self.make_codes()
 
                 #         encoded_text = self.get_encoded_text(text)
